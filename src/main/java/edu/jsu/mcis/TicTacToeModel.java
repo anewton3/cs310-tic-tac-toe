@@ -73,11 +73,15 @@ public class TicTacToeModel {
         
         /* Create grid (width x width) as a 2D Mark array */
 
-        /* INSERT YOUR CODE HERE */
+        grid = new Mark[width][width];
 
         /* Initialize grid by filling every square with empty marks */
 
-        /* INSERT YOUR CODE HERE */
+        for(int i = 0; i < grid.length; i++){
+			for(int j = 0; j < grid.length; j++){
+				grid[i][j] = EMPTY;
+			}
+		}
         
     }
 	
@@ -87,19 +91,30 @@ public class TicTacToeModel {
            location, but only if the location is valid and if the square is
            empty! */
         
-        /* INSERT YOUR CODE HERE */
+        if (this.isValidSquare() == true){
+			if (this.isSquareMarked() == false){
+				if (this.isXTurn() == true){
+					grid[row][col] == X;
+				}
+				else{
+					grid[row][col] == O;
+				}
+			}
+		}
 
-        return false; /* remove this line! */
-        
     }
 	
     private boolean isValidSquare(int row, int col) {
         
         /* Return true if specified location is within grid bounds */
         
-        /* INSERT YOUR CODE HERE */
-
-        return false; /* remove this line! */
+        if ((row < width && col < width) && (row >= 0 && col >= 0)){
+			return true;
+		}
+		else{
+			return false;
+		}
+        
         
     }
 	
@@ -107,20 +122,21 @@ public class TicTacToeModel {
         
         /* Return true if square at specified location is marked */
         
-        /* INSERT YOUR CODE HERE */
-
-        return false; /* remove this line! */
-            
+        if (grid[row][col] == EMPTY){
+			Return false;
+		}
+		else{
+			return true;
+		}
+ 
     }
 	
     public Mark getMark(int row, int col) {
         
         /* Return mark from the square at the specified location */
         
-        /* INSERT YOUR CODE HERE */
+        return grid[row][col].toString();
 
-        return null; /* remove this line! */
-            
     }
 	
     public Result getResult() {
