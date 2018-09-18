@@ -197,7 +197,23 @@ public class TicTacToeModel {
 			}
 		}
 
-		/* Check diag */
+		/* Check diag top left to bottom right */
+		for (int i = 0; i < width; i++){
+			nextMark = grid[i][i];
+			if (markToCheck != nextMark){
+					return false;
+			}
+		}
+
+		/*check doag bottom left to top right*/
+		for (int i = width - 1; i > 0; i--){
+			int j = 0;
+			nextMark = grid[i][j];
+			if (markToCheck != nextMark){
+					return false;
+			}
+			j++;
+		}
 		
 		if (markToCheck == nextMark){
 			return true;
