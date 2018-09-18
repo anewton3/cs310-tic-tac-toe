@@ -16,7 +16,17 @@ public class TicTacToeView {
         
         /* Print the board to the console (see examples) */
         
-        /* INSERT YOUR CODE HERE */
+        System.out.print("\t");
+		for (int i = 0; i < model.getWidth(); i++){
+			System.out.print(i);
+		}
+		System.out.println();
+		for (int i = 0; i < model.getWidth(); i++){
+			for (int j = 0; j < model.getWidth(); j++){
+				System.out.print(i + " ");
+				System.out.println(model.getMark(i,j));
+			}
+		}
 
     }
 
@@ -24,7 +34,16 @@ public class TicTacToeView {
 
         /* Display a prompt for the player's next move (see examples) */
 
-        /* INSERT YOUR CODE HERE */
+        if (model.isXTurn() == true){
+			System.out.println("Player 1 (X) Move:");
+			System.out.println("Enter the row and cloumn numbers,");
+			System.out.println("seperated by a space: ");
+		}
+		else{
+			System.out.println("Player 2 (X) Move:");
+			System.out.println("Enter the row and cloumn numbers,");
+			System.out.println("seperated by a space: ");
+		}
 
     }
 
