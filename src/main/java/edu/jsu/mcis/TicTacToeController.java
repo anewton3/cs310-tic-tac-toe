@@ -34,8 +34,17 @@ public class TicTacToeController {
            center square of a 3 x 3 grid).  Make mark if input is valid, or show
            error message using view's showInputError() if input is invalid. */
         
-        /* INSERT YOUR CODE HERE */
+        String input = keyboard.nextLine();
+        String[] nums = input.split(" ");
+        int row = Integer.parseInt(nums[0]);
+        int col = Integer.parseInt(nums[1]);
         
+        if (model.makeMark(row, col)){
+            model.makeMark(row, col);
+        }
+        else{
+            view.showInputError();
+        }
     }
 
 }

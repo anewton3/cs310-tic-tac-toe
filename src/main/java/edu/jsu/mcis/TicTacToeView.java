@@ -15,12 +15,12 @@ public class TicTacToeView {
     public void viewModel() {
         
         /* Print the board to the console (see examples) */
-        
-        System.out.print("  ");
+        System.out.print("\n");
+        System.out.print("   ");
 		for (int i = 0; i < model.getWidth(); i++){
 			System.out.print(i);
 		}
-		System.out.print("\n");
+		System.out.println("\n");
 		for (int i = 0; i < model.getWidth(); i++){
 			System.out.print(i + " ");
 			for (int j = 0; j < model.getWidth(); j++){
@@ -37,13 +37,11 @@ public class TicTacToeView {
 
         if (model.isXTurn() == true){
 			System.out.println("Player 1 (X) Move:");
-			System.out.println("Enter the row and cloumn numbers, seperated by a space: ");
-			System.out.print("\n");
+			System.out.print("Enter the row and cloumn numbers, seperated by a space: ");
 		}
 		else{
-			System.out.println("Player 2 (X) Move:");
-			System.out.println("Enter the row and cloumn numbers, seperated by a space: ");
-			System.out.print("\n");
+			System.out.println("Player 2 (O) Move:");
+			System.out.print("Enter the row and cloumn numbers, seperated by a space: ");
 		}
 
     }
