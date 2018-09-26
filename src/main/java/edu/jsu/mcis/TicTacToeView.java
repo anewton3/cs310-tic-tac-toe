@@ -55,8 +55,15 @@ public class TicTacToeView extends JPanel implements ActionListener {
            (from the Model's "getResult()" method) in the result label. */
         
         String name = ((JButton) event.getSource()).getName(); // Get button name
-        
-        // INSERT YOUR CODE HERE
+        updateSquares();
+        int coord = Integer.parseInt(name.replaceAll("[^\\d.]", ""));
+        int col = coord % 10;
+        coord = coord / 10;
+        int row = coord % 10;
+        model.makeMark(row,col);
+        if (model.isGameover()){
+            showResult(model.getResult().toString().toUpperCase());
+        }
 
     }
         
@@ -64,7 +71,12 @@ public class TicTacToeView extends JPanel implements ActionListener {
 
         /* Loop through all View buttons and (re)set the text of each button
            to reflect the grid contents (use the Model's "getMark()" method). */
-
+        for (int i = 0; i < model.getWidth(); i++){
+            for (int j = 0; j < model.getWidth(); j++){
+                JButton e = squares[i][j];
+                e.setText(model.getMark(i,j).toString());
+            }
+        }
     }
         
     public void showResult(String message) {
